@@ -40,11 +40,11 @@ steps:
     
   cloudFoundryDeploy:
     cfCredentialsId: susaas-cf-credentials
-    apiEndpoint: '<cf-api>'
-    org: '<cf-org>'
-    space: '<cf-space>'
+    apiEndpoint: 'https://api.cf.us10-001.hana.ondemand.com'
+    org: '2e4e072dtrial_cloud-transport-management-system-pkhowode'
+    space: 'dev'
     mtaDeployParameters: '-f --version-rule ALL'
-    mtaExtensionDescriptor: '<relative-path-of-the-mtaext-file>'
+    mtaExtensionDescriptor: './deploy/cf/mtaext/trial-basic-cicd.mtaext'
     ################# e.g., './deploy/cf/mtaext/free-basic-cicd.mtaext'
     mtaExtensionCredentials: 
       susaas-sb-credentials: susaas-sb-credentials
