@@ -48,7 +48,7 @@ steps:
     ################# e.g., './deploy/cf/mtaext/free-basic-cicd.mtaext'
     mtaExtensionCredentials:
       susaas-sb-credentials: susaas-sb-credentials
-# tmsUpload:  # only relevant once you finish the SAP Cloud Transport Management Expert Feature chapter
-#   nodeName: 'QA'
-#   credentialsId: 'tms'
-#   customDescription: 'TMS Upload'
+tmsUpload:  # only relevant once you finish the SAP Cloud Transport Management Expert Feature chapter
+  nodeName: 'trial'
+  credentialsId: 'tms-sk'
+  customDescription: 'TMS Upload'
