@@ -1,6 +1,6 @@
 ---
 general:
-  buildTool: 'mta'
+  buildTool: "mta"
 
 service:
   stages:
@@ -33,23 +33,21 @@ steps:
     failOnError: true
 
   mtaBuild:
-    platform: 'CF'
-    source: './deploy/cf/'
-    extensions: '<relative-path-of-the-mtaext-file>'
+    platform: "CF"
+    source: "./deploy/cf/"
+    extensions: "./mtaext/trial-basic-cicd.mtaext"
     ##### e.g., './mtaext/free-basic-cicd.mtaext'
-    
+
   cloudFoundryDeploy:
     cfCredentialsId: susaas-cf-credentials
-    apiEndpoint: 'https://api.cf.us10-001.hana.ondemand.com'
-    org: '2e4e072dtrial_cloud-transport-management-system-pkhowode'
-    space: 'dev'
-    mtaDeployParameters: '-f --version-rule ALL'
-    mtaExtensionDescriptor: './deploy/cf/mtaext/trial-basic-cicd.mtaext'
+    apiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
+    org: "2e4e072dtrial_cloud-transport-management-system-pkhowode"
+    space: "dev"
+    mtaDeployParameters: "-f --version-rule ALL"
+    mtaExtensionDescriptor: "./deploy/cf/mtaext/trial-basic-cicd.mtaext"
     ################# e.g., './deploy/cf/mtaext/free-basic-cicd.mtaext'
-    mtaExtensionCredentials: 
+    mtaExtensionCredentials:
       susaas-sb-credentials: susaas-sb-credentials
-    
-
 # tmsUpload:  # only relevant once you finish the SAP Cloud Transport Management Expert Feature chapter
 #   nodeName: 'QA'
 #   credentialsId: 'tms'
