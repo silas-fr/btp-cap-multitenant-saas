@@ -6,6 +6,18 @@ service:
   stages:
     Build:
       credentialVariables:
+        - name: "AlertNotif"
+          credentialId: "susaas-alert-notif"
+      # Dynamically create config file during Release Stage
+      runFirst:
+        command: echo "$AlertNotif" > ./deploy/cf/config/alert-notif-private.json
+      credentialVariables:
+        - name: "XsSecurity"
+          credentialId: "susaas-xs-security"
+      # Dynamically create config file during Release Stage
+      runFirst:
+        command: echo "$XsSecurity" > ./deploy/cf/config/xs-security.json
+      credentialVariables:
         - name: "Catalog"
           credentialId: "susaas-catalog"
       runFirst:
